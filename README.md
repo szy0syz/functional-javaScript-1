@@ -51,9 +51,9 @@ greet("Alan");  // -> Hello, Jerry!
 ## Why functional programming?
 
 > **more predictable, safer**
-
+>
 > **easier to test/debug**
-
+>
 > ~~is The Best™ paradigm, makes you look smart~~
 
 ## Side Effects
@@ -94,8 +94,7 @@ thesis2; // {name: "Jerry", date: 2000}
 - 传原始对象进去
 - 返回一个新的对象，不去动原来的对象
 
-- 做下练习题
-  - `https://observablehq.com/@anjana/exercise-pure-functions?collection=@anjana/functional-javascript-first-steps`
+- [做下练习题](https://observablehq.com/@anjana/exercise-pure-functions?collection=@anjana/functional-javascript-first-steps)
 
 ## Recursion
 
@@ -149,8 +148,7 @@ sum(numbers); // -> 10
 const newSum = numbers.reduce((sum,cur) => sum += cur, 0);
 ```
 
-- 来嘛，再做下练习
-  - `https://observablehq.com/@anjana/functional-javascript-first-steps?collection=%40anjana%2Ffunctional-javascript-first-steps`
+- [来嘛，再做下练习](https://observablehq.com/@anjana/functional-javascript-first-steps?collection=%40anjana%2Ffunctional-javascript-first-steps)
 
 原来一个递归函数包含这两部分：
 
