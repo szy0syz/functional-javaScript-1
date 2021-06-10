@@ -150,6 +150,12 @@ const newSum = numbers.reduce((sum,cur) => sum += cur, 0);
 
 - [来嘛，再做下练习](https://observablehq.com/@anjana/functional-javascript-first-steps?collection=%40anjana%2Ffunctional-javascript-first-steps)
 
+## Iteration vs. Recursion
+
+> In functional programming, we avoid mutable state, and therefore aviod iterative loops using `for` or `while`. As an alternative to iteration, we use `recursion` to break down the problem into smaller ones.
+>
+> 在函数式编程中，我们应该避免去改变状态，而且也要避免使用迭代循环中的 `for` 和 `while`，在去替换迭代的算法时，我们应该使用递归的思想：把问题分解成更小份。
+
 原来一个递归函数包含这两部分：
 
 - Base case: condition(s) under which the function returns an output without making a recursive call
