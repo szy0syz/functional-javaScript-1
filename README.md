@@ -152,8 +152,9 @@ const newSum = numbers.reduce((sum,cur) => sum += cur, 0);
 - 来嘛，再做下练习
   - https://observablehq.com/@anjana/functional-javascript-first-steps?collection=%40anjana%2Ffunctional-javascript-first-steps
 
-原来一个递归函数包含这两部分，原来完全没注意到：
+原来一个递归函数包含这两部分：
 
 - Base case: condition(s) under which the function returns an output without making a recursive call
 - 基本情况：当前条件下，不需要去调用自身递归函数，就可以得到输出
+- 其实这就是递归的终止情况了，递归到此完结了
 - Recursive case: condition(s) under which the function calls itself to return the output
