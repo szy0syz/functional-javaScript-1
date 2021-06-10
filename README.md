@@ -162,3 +162,17 @@ const newSum = numbers.reduce((sum,cur) => sum += cur, 0);
 - 基本情况：当前条件下，不需要去调用自身递归函数，就可以得到输出
 - 其实这就是递归的终止情况了，递归到此完结了
 - Recursive case: condition(s) under which the function calls itself to return the output
+
+## high order function
+
+- First-class functions
+  - can be passed around as values (like callbacks)
+- higher-order functions
+  - take ohter functions
+  - as input/output
+- **Remember: Don't loop** （被循环）
+  - use higher-order functions like map,reduce, filter **instead**
+
+![img2](images/2.png)
+
+> 👆👆 灵魂配图师 👆👆
