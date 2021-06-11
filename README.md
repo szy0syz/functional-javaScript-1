@@ -176,3 +176,80 @@ const newSum = numbers.reduce((sum,cur) => sum += cur, 0);
 ![img2](images/2.png)
 
 > 👆👆 灵魂配图师 👆👆
+
+### 高阶函数-Filter
+
+> The filter function takes a "predicate" function (a function that takes in a value and returns a boolean) and an array, applies the predicate function to each value in the array, and returns a new array with only those values for which the predicate function returns true.
+>
+> filter 函数使用 `predicate` 函数和原数据作为输入参数！
+
+```js
+function filter(predicateFn, array) {
+  if (length(array) === 0) return [];
+  const firstItem = head(array);
+  const filteredFirst = predicateFn(firstItem) ? [firstItem] : [];
+  return concat(filteredFirst, filter(predicateFn, tail(array)));
+}
+```
+
+### Challenge: Mapping Fizz Buzz
+
+```js
+// -> 我的 😂
+fizzBuzz = map(n => {
+  if (n === 0) return "fizzbuzz";
+  if (n % 3 === 0 && n % 5 === 0) return "fizzbuzz";
+  if (n % 3 === 0) return "fizz";
+  if (n % 5 === 0) return "buzz";
+  return n;
+}, wholes)
+```
+
+```js
+// -> 作者的 🚀
+const fizzBuzz = map(n => {
+  const fizzed = n % 3 === 0 ? 'fizz' : '';
+  const buzzed = n % 5 === 0 ? 'buzz' : '';
+  return fizzed || buzzed ? fizzed + buzzed : n;
+}, wholes)
+```
+
+> 大意了，求余的操作结果可以留着用！
+
+## Closure
+
+- Functions can defin functions
+  - return inner function
+  - and it will "remeber" scope
+
+```js
+function makeAdjectifier(adjective) {
+  return function(noun) {
+    return adjective + " " + noum;
+  }
+}
+
+const coolfiy = makeAdjectifier("cool");
+coolfiy("workshop");  // -> "cool workshop"
+coolfiy("drink");     // -> "cool drink"
+```
+
+- This lets us "Partially Applied Function"
+  - to "lock in" some arguments
+  - and make more reusable functions
+
+> 以上案例告诉我们，可以使用“部分调用”的函数 去锁定一些参数和制作更多可复用的函数
+
+在函数式编程语言中，调用函数的过程也叫做将函数应用(applying)到参数。当调用时传入了所有的参数，就叫做将函数完全应用(fully applied)到了所有参数。如果在调用时只传入了部分参数，返回的结果就是一个部分应用函数(Partially Applied Function)。当只传入部分参数时，Scala并不会报错，而是简单地应用(apply)了这些参数，并返回一个接受剩余参数的新函数。
+
+```scala
+val divide = (num: Double, den: Double) => {
+ num / den
+}
+
+val halfOf: (Double) => Double = divide(_, 2)
+
+halfOf 20 shouldEqual 10
+```
+
+- https://zhuanlan.zhihu.com/p/33165576
